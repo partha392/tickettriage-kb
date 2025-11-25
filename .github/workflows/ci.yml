@@ -33,6 +33,6 @@ jobs:
           docker build -t ticket-triage:latest .
 
       - name: Lint Dockerfile (optional)
-        uses: hadolint/hadolint-action@v3
+        uses: hadolint/hadolint-action@v3.1.0
         with:
           dockerfile: Dockerfile
