@@ -6,7 +6,7 @@ class WebSearchTool:
         self.ddgs = DDGS()
 
     @log_trace
-    def search(self, query: str, max_results: int = 3) -> list:
+    def search(self, query: str, max_results: int = 5) -> list:
         """
         Search the web using DuckDuckGo.
         Returns a list of dicts: {"title": str, "href": str, "body": str}
