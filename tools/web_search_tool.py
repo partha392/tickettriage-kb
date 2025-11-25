@@ -25,15 +25,19 @@ class WebSearchTool:
             logger.log_event("web_search.success", {"query": query, "hits": len(results)})
             
             # Normalize keys to match KB format (title, url, snippet)
-            normalized = []
+            normalized_results = []
+            print(f"\n--- Web Search Results ({len(results)}) ---")
             for r in results:
-                normalized.append({
-                    "title": r.get("title"),
-                    "url": r.get("href"),
-                    "snippet": r.get("body"),
+                snippet = r.get("body", "")
+                print(f"- {r.get('title', 'No Title')}: {snippet[:100]}...")
+                normalized_results.append({
+                    "title": r.get("title", ""),
+                    "url": r.get("href", ""),
+                    "snippet": snippet,
                     "source": "web"
                 })
-            return normalized
+            print("-----------------------------------\n")
+            return normalized_results
         except Exception as e:
             logger.log_event("web_search.error", {"query": query, "error": str(e)})
             return []
