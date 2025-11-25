@@ -21,6 +21,8 @@ conda activate test
 source venv/bin/activate
 # OR
 source env/bin/activate
+# OR
+cd kaggle_Ai_agent
 
 # Windows:
 .\venv\Scripts\activate
@@ -65,6 +67,7 @@ Test with real AI (requires Step 4).
 ```bash
 python3 main.py --ticket "My video player is broken"
 ```
+*Note: If the Knowledge Base doesn't have the answer, the agent will now search the web using DuckDuckGo!*
 
 ---
 **Happy Coding!** 🤖

@@ -19,6 +19,7 @@ TicketTriage+KB is a production-ready multi-agent system that automatically clas
 2. ✅ **Gemini Integration** - AI-powered classification and response generation
 3. ✅ **Tool Integration** - KB search, memory management, escalation routing
 4. ✅ **Production Deployment** - Docker, FastAPI, monitoring, tests
+5. ✅ **Real-Time Web Search** - DuckDuckGo integration for fallback information
 
 ## 🏗️ Architecture
 
@@ -39,11 +40,11 @@ TicketTriage+KB is a production-ready multi-agent system that automatically clas
        ├─────────────┬──────────────┬──────────────┐
        ▼             ▼              ▼              ▼
 ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐
-│ KB Search│  │  Memory  │  │  Draft   │  │Escalation│
-│   Tool   │  │   Bank   │  │  Agent   │  │  Agent   │
-└──────────┘  └──────────┘  └──────────┘  └──────────┘
-       │             │              │              │
-       └─────────────┴──────────────┴──────────────┘
+│ KB Search│  │  Memory  │  │  Draft   │  │Escalation│  │Web Search│
+│   Tool   │  │   Bank   │  │  Agent   │  │  Agent   │  │   Tool   │
+└──────────┘  └──────────┘  └──────────┘  └──────────┘  └──────────┘
+       │             │              │              │              │
+       └─────────────┴──────────────┴──────────────┴──────────────┘
                       │
                       ▼
               ┌──────────────┐
@@ -184,6 +185,7 @@ pytest tests/test_triage.py -v
 - [x] Multi-agent coordination
 - [x] Gemini AI integration
 - [x] KB search with normalization
+- [x] Real-time Web Search (DuckDuckGo) fallback
 - [x] Automatic escalation
 - [x] Memory/context tracking
 - [x] REST API (FastAPI)

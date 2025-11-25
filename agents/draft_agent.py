@@ -4,6 +4,7 @@ import re
 import google.generativeai as genai
 from dotenv import load_dotenv
 from utils.observability import logger, log_trace
+from tools.web_search_tool import web_search_tool
 
 load_dotenv()
 
@@ -56,6 +57,14 @@ class DraftReplyAgent:
                 "body": "GOOGLE_API_KEY not found. Cannot generate draft.",
                 "action": "error"
             })
+        
+        # Fallback to Web Search if KB is empty
+        if not kb_results:
+            logger.log_event("draft_agent.web_fallback", {"query": ticket_content})
+            web_results = web_search_tool.search(ticket_content)
+            if web_results:
+                kb_results = web_results
+
         # Format KB results (handle missing fields gracefully)
         def get_kb_snippet(item):
             """Extract snippet from KB item, trying multiple fields."""
