@@ -13,11 +13,12 @@ class WebSearchTool:
         """
         try:
             try:
-                results = list(self.ddgs.text(query, max_results=max_results, backend="html"))
+                # region="wt-wt" prevents localization issues (e.g. getting Chinese results)
+                results = list(self.ddgs.text(query, max_results=max_results, backend="html", region="wt-wt"))
             except Exception:
                 # Fallback to default backend if html fails
                 try:
-                    results = list(self.ddgs.text(query, max_results=max_results))
+                    results = list(self.ddgs.text(query, max_results=max_results, region="wt-wt"))
                 except Exception as e:
                     print(f"Search failed: {e}")
                     logger.log_event("web_search.error", {"query": query, "error": str(e), "backend_fallback_failed": True})
