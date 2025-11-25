@@ -13,16 +13,16 @@ class WebSearchTool:
         """
         try:
             try:
-                # region="wt-wt" prevents localization issues (e.g. getting Chinese results)
-                results = list(self.ddgs.text(query, max_results=max_results, backend="html", region="wt-wt"))
+                # Try 'api' backend first (smarter, better ranking)
+                results = list(self.ddgs.text(query, max_results=max_results, backend="api", region="us-en"))
             except Exception:
-                # Fallback to default backend if html fails
-                try:
-                    results = list(self.ddgs.text(query, max_results=max_results, region="wt-wt"))
-                except Exception as e:
-                    print(f"Search failed: {e}")
-                    logger.log_event("web_search.error", {"query": query, "error": str(e), "backend_fallback_failed": True})
-                    return []
+                # Fallback to 'html' backend if api fails or returns nothing
+                print("API backend failed, falling back to HTML...")
+                results = list(self.ddgs.text(query, max_results=max_results, backend="html", region="us-en"))
+        except Exception as e:
+            print(f"Search failed: {e}")
+            logger.log_event("web_search.error", {"query": query, "error": str(e), "backend_fallback_failed": True})
+            return []
             logger.log_event("web_search.success", {"query": query, "hits": len(results)})
             
             # Normalize keys to match KB format (title, url, snippet)
