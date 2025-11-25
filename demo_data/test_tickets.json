@@ -1,0 +1,30 @@
+[
+    {
+        "id": "demo_001",
+        "description": "How do I enable dark mode?",
+        "user_id": "customer_001",
+        "expected_category": "feature_request",
+        "expected_severity": "low"
+    },
+    {
+        "id": "demo_002",
+        "description": "I was double charged for my subscription!",
+        "user_id": "customer_002",
+        "expected_category": "billing",
+        "expected_severity": "high"
+    },
+    {
+        "id": "demo_003",
+        "description": "The video player is not working on my device",
+        "user_id": "customer_003",
+        "expected_category": "technical_issue",
+        "expected_severity": "high"
+    },
+    {
+        "id": "demo_004",
+        "description": "I want to cancel my subscription",
+        "user_id": "customer_004",
+        "expected_category": "account_management",
+        "expected_severity": "medium"
+    }
+]

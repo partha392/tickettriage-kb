@@ -1,0 +1,11 @@
+# Development dependencies
+pre-commit==3.6.0
+pytest==7.4.3
+pytest-cov==4.1.0
+
+# Production dependencies (from requirements.txt)
+google-generativeai==0.3.2
+python-dotenv==1.0.0
+colorama==0.4.6
+streamlit==1.29.0
+watchdog==3.0.0

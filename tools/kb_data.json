@@ -1,0 +1,42 @@
+[
+  {
+    "id": "kb_001",
+    "title": "App Crash on Launch (Android)",
+    "content": "If your app crashes on Android, try clearing cache and data. Go to Settings > Apps > [App Name] > Storage > Clear Cache. This issue is fixed in version 2.4.6."
+  },
+  {
+    "id": "kb_002",
+    "title": "Password Reset Not Working",
+    "content": "If password reset emails are not arriving, check your spam folder. Also ensure the email address on file is correct. Contact support if the issue persists."
+  },
+  {
+    "id": "kb_003",
+    "title": "Billing - Duplicate Charges",
+    "content": "If you see duplicate charges, please contact our billing team immediately with your transaction IDs. Refunds are processed within 5-7 business days."
+  },
+  {
+    "id": "kb_004",
+    "title": "Feature Request - Dark Mode",
+    "content": "Dark mode is currently in beta. Users can enable it by going to Settings > Display > Theme (Beta). It may have some visual bugs."
+  },
+  {
+    "id": "kb_005",
+    "title": "Dark Mode Brightness Issue",
+    "content": "Some users report that dark mode causes brightness to be too low on certain devices. This is a known issue being fixed in the next release. Workaround: manually increase screen brightness in device settings."
+  },
+  {
+    "id": "kb_006",
+    "title": "Video Player Troubleshooting",
+    "content": "If the video player is not working: 1) Check your internet connection, 2) Clear browser cache, 3) Try a different browser, 4) Ensure you're using the latest app version."
+  },
+  {
+    "id": "kb_007",
+    "title": "Account Cancellation Process",
+    "content": "To cancel your subscription: Go to Settings > Account > Subscription > Cancel. You will retain access until the end of your billing period. Refunds are not provided for partial months."
+  },
+  {
+    "id": "kb_008",
+    "title": "Login Issues - Common Solutions",
+    "content": "If you cannot login: 1) Verify your email/username is correct, 2) Try password reset, 3) Clear browser cookies, 4) Disable VPN if using one, 5) Contact support if issue persists."
+  }
+]

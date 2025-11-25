@@ -1,0 +1,33 @@
+repos:
+  # Prevent committing secrets
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-added-large-files
+        args: ['--maxkb=500']
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: detect-private-key
+      
+  # Check for API keys in code
+  - repo: local
+    hooks:
+      - id: check-api-keys
+        name: Check for API keys
+        entry: bash -c 'if git diff --cached | grep -E "AIza[0-9A-Za-z_-]{30,}|AKIA[0-9A-Z]{16}"; then echo "ERROR: API key detected in commit"; exit 1; fi'
+        language: system
+        pass_filenames: false
+        
+      - id: check-env-files
+        name: Prevent committing .env files
+        entry: bash -c 'if git diff --cached --name-only | grep -E "^\.env$|^\.env\.local$"; then echo "ERROR: .env file in commit"; exit 1; fi'
+        language: system
+        pass_filenames: false
+        
+      - id: run-tests
+        name: Run pytest
+        entry: bash -c 'export PYTHONPATH="$PWD:$PYTHONPATH" && pytest tests/test_sanitizer.py tests/test_kb_parsing.py -q'
+        language: system
+        pass_filenames: false
+        stages: [commit]
