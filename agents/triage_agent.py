@@ -29,7 +29,7 @@ class TriageAgent:
         logger.log_event("triage.start", {"ticket_id": ticket_id})
         
         # 1. Analyze Ticket (Intent, Severity, Category)
-        analysis = self._analyze_ticket(user_query)
+        analysis = self._classify_ticket(user_query)
         logger.log_event("triage.analysis", analysis)
         
         # Save to memory
