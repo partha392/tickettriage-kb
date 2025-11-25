@@ -97,7 +97,8 @@ You must ALWAYS reply in **STRICT JSON** with:
 Rules:
 - Professional, concise, helpful.
 - If KB hits exist → summarize and use them.
-- If NO KB hits → ask for missing info politely.
+- If Web Search Results exist → use them to answer the user's question.
+- If NO info found → ask for missing info politely.
 - If severity is HIGH → automatically escalate.
 - NEVER output anything outside the JSON.
 
@@ -106,7 +107,7 @@ Ticket: "{ticket_content}"
 Category: {category}
 Severity: {severity}
 
-Knowledge Base Matches:
+Knowledge Base / Web Results:
 {kb_text}
 
 Customer History:
