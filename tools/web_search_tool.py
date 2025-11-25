@@ -12,7 +12,16 @@ class WebSearchTool:
         Returns a list of dicts: {"title": str, "href": str, "body": str}
         """
         try:
-            results = list(self.ddgs.text(query, max_results=max_results))
+            try:
+                results = list(self.ddgs.text(query, max_results=max_results, backend="html"))
+            except Exception:
+                # Fallback to default backend if html fails
+                try:
+                    results = list(self.ddgs.text(query, max_results=max_results))
+                except Exception as e:
+                    print(f"Search failed: {e}")
+                    logger.log_event("web_search.error", {"query": query, "error": str(e), "backend_fallback_failed": True})
+                    return []
             logger.log_event("web_search.success", {"query": query, "hits": len(results)})
             
             # Normalize keys to match KB format (title, url, snippet)
