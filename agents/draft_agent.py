@@ -51,11 +51,11 @@ class DraftReplyAgent:
         """
 
         if not GOOGLE_API_KEY:
-            return {
+            return json.dumps({
                 "subject": "Missing API Key",
                 "body": "GOOGLE_API_KEY not found. Cannot generate draft.",
                 "action": "error"
-            }
+            })
         # Format KB results (handle missing fields gracefully)
         def get_kb_snippet(item):
             """Extract snippet from KB item, trying multiple fields."""

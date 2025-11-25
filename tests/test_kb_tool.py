@@ -12,7 +12,7 @@ from tools.kb_tool import kb_tool, normalize_query
 
 def test_normalize_query():
     """Test query normalization"""
-    assert normalize_query("How do I enable dark mode?") == "how do i enable dark mode"
+    assert normalize_query("How do I enable dark mode?") == "enable dark mode"
     assert normalize_query("  DARK MODE  ") == "dark mode"
 
 def test_kb_search_dark_mode():

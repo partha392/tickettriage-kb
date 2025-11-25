@@ -1,5 +1,8 @@
+import os
 import pytest
 from agents.draft_agent import DraftReplyAgent
+
+@pytest.mark.skipif(not os.getenv("GOOGLE_API_KEY"), reason="Requires GOOGLE_API_KEY")
 
 def test_kb_parse_missing_snippet():
     """Test that draft agent handles KB items without 'snippet' field."""
