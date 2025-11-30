@@ -281,6 +281,6 @@ For questions: [Your Email] | [GitHub Issues](https://github.com/yourusername/ti
 
 **⭐ Star this repo if you find it helpful!**
 
-**🎥 Demo Video:** [Link to video]
+**🎥 Demo Video:** [https://youtu.be/07Pj152dNuc]
 
-**📊 Kaggle Notebook:** [Link to notebook]
+**📊 Kaggle Notebook:** [https://kaggle.com/competitions/agents-intensive-capstone-project/writeups/tickettriage-kb-multi-agent-customer-support-syst]
