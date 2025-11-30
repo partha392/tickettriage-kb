@@ -6,6 +6,8 @@
 
 **Enterprise-grade AI-powered customer support automation using Google Gemini**
 
+***https://youtu.be/07Pj152dNuc***
+
 ## 🎯 Elevator Pitch
 
 TicketTriage+KB is a production-ready multi-agent system that automatically classifies support tickets, searches knowledge bases, generates professional AI responses, and escalates critical issues - reducing human triage time by 70% while maintaining high-quality customer service.
